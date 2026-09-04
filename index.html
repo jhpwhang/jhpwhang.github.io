@@ -12,7 +12,7 @@
       --muted: #666;
       --link: #315c35;
       --link-visited: #556b2f;
-      --rule: #bbb;
+      --rule: #ddd;
       --background: #fff;
     }
 
@@ -38,6 +38,14 @@
       margin: 0 0 8px;
       font-size: 2rem;
       font-weight: 600;
+    }
+
+    .korean-name {
+      display: inline-block;
+      font-size: 0.65em;
+      font-weight: 400;
+      color: var(--muted);
+      white-space: nowrap;
     }
 
     h2 {
@@ -101,17 +109,12 @@
     }
 
     .research-interests {
-      margin-top: 22px;
+      margin-top: 16px;
+      margin-bottom: 0;
     }
 
     .cv-link {
       font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .cv-link a,
-    .cv-link a:visited {
-      color: inherit;
     }
 
     .publication-list,
@@ -145,14 +148,76 @@
       color: var(--muted);
     }
 
+    .publication-header > strong {
+      font-weight: 600;
+    }
+
+    .student-list div.details {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-top: 2px;
+    }
+
     .grant {
       margin-bottom: 18px;
     }
 
     .grant-title {
-      font-weight: bold;
+      font-weight: 600;
     }
 
+    section[id] {
+      scroll-margin-top: 24px;
+    }
+
+    .current-courses,
+    .subsection-heading,
+    .past-courses summary {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .current-courses,
+    .subsection-heading {
+      margin-bottom: 16px;
+    }
+
+    .past-courses summary {
+      cursor: pointer;
+      width: fit-content;
+      list-style: none;
+    }
+
+    .past-courses summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .past-courses summary::after {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-left: 10px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: translateY(-2px) rotate(45deg);
+    }
+
+    .past-courses[open] summary::after {
+      transform: translateY(1px) rotate(225deg);
+    }
+
+    .past-courses summary:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .past-courses[open] summary {
+      margin-bottom: 16px;
+    }
     footer {
       color: var(--muted);
       font-size: 0.85rem;
@@ -165,12 +230,13 @@
 
 
       .intro {
-        gap: 24px;
+        display: block;
       }
 
       .portrait {
-        width: 140px;
-        height: 175px;
+        width: 110px;
+        height: auto;
+        margin: 4px auto 24px;
       }
 
       .position {
@@ -189,17 +255,14 @@
         display: block;
         margin-top: 3px;
       }
-    }
 
-    @media (max-width: 430px) {
-      .intro {
-        display: block;
+      .paper-links {
+        white-space: normal;
       }
 
-      .portrait {
-        width: 140px;
-        height: 175px;
-        margin: 4px auto 24px;
+      .past-courses summary {
+        min-height: 44px;
+        padding: 10px 12px 10px 0;
       }
     }
 
@@ -212,7 +275,7 @@
   <header>
     <div class="intro">
       <div class="intro-text">
-        <h1>Junho Peter Whang</h1>
+        <h1>Junho Peter Whang <span class="korean-name" lang="ko">황준호</span></h1>
 
         <div class="subtitle">
           Department of Mathematical Sciences<br>
@@ -231,38 +294,34 @@
 
     <div class="position">
       <span>2021–present</span>
-      <span>Assistant Professor, Seoul National University.</span>
+      <span>Assistant Professor, Seoul National University</span>
     </div>
 
     <div class="position">
       <span>2025–2026</span>
-      <span>Visiting Fellow, Princeton University (sabbatical).</span>
+      <span>Visiting Fellow, Princeton University (sabbatical)</span>
     </div>
 
     <div class="position">
       <span>2018–2021</span>
-      <span>C.L.E. Moore Instructor, Massachusetts Institute of Technology.</span>
+      <span>C.L.E. Moore Instructor, MIT</span>
     </div>
 
     <div class="position">
-      <span>2013–2018</span>
-      <span>Ph.D. in Mathematics, Princeton University. Advisor: Peter Sarnak.</span>
-    </div>
-
-    <div class="position">
-      <span>2009–2013</span>
-      <span>B.Sc. in Mathematics, Honours with Distinction, Queen's University.</span>
+      <span>2018</span>
+      <span>Ph.D., Princeton University (advisor: Peter Sarnak)</span>
     </div>
 
     <p class="research-interests">
       <strong>Research interests:</strong>
       Number theory (Diophantine analysis), arithmetic geometry, topology, and dynamics.
     </p>
+
   </header>
 
   <hr>
 
-  <section>
+  <section id="publications">
     <h2>Selected Publications and Preprints</h2>
 
     <ul class="publication-list">
@@ -293,8 +352,8 @@
         <div class="publication-header">
           <strong>Stokes matrices and exceptional isomorphisms.</strong>
           <span class="paper-links">
-            [<a href="https://arxiv.org/abs/2009.07104" target="_blank" rel="noopener">arXiv (old)</a>]
-            [<a href="https://doi.org/10.1007/s00208-024-02850-8" target="_blank" rel="noopener">published</a>]
+            [<a href="https://arxiv.org/abs/2009.07104" target="_blank" rel="noopener">earlier version</a>]
+            [<a href="https://doi.org/10.1007/s00208-024-02850-8" target="_blank" rel="noopener">journal</a>]
           </span>
         </div>
         <div class="details">
@@ -307,7 +366,7 @@
           <strong>Surface group representations in SL<sub>2</sub>(C) with finite mapping class orbits.</strong>
           <span class="paper-links">
             [<a href="https://arxiv.org/abs/1707.00071" target="_blank" rel="noopener">arXiv</a>]
-            [<a href="https://doi.org/10.2140/gt.2022.26.679" target="_blank" rel="noopener">published</a>]
+            [<a href="https://doi.org/10.2140/gt.2022.26.679" target="_blank" rel="noopener">journal</a>]
           </span>
         </div>
         <div class="details">
@@ -321,7 +380,7 @@
           <strong>The rank two <em>p</em>-curvature conjecture on generic curves.</strong>
           <span class="paper-links">
             [<a href="https://arxiv.org/abs/1811.04538" target="_blank" rel="noopener">arXiv</a>]
-            [<a href="https://doi.org/10.1016/j.aim.2021.107800" target="_blank" rel="noopener">published</a>]
+            [<a href="https://doi.org/10.1016/j.aim.2021.107800" target="_blank" rel="noopener">journal</a>]
           </span>
         </div>
         <div class="details">
@@ -334,7 +393,7 @@
           <strong>Arithmetic of curves on moduli of local systems.</strong>
           <span class="paper-links">
             [<a href="https://arxiv.org/abs/1803.04583" target="_blank" rel="noopener">arXiv</a>]
-            [<a href="https://doi.org/10.2140/ant.2020.14.2575" target="_blank" rel="noopener">published</a>]
+            [<a href="https://doi.org/10.2140/ant.2020.14.2575" target="_blank" rel="noopener">journal</a>]
           </span>
         </div>
         <div class="details">
@@ -347,7 +406,7 @@
           <strong>Nonlinear descent on moduli of local systems.</strong>
           <span class="paper-links">
             [<a href="https://arxiv.org/abs/1710.01848" target="_blank" rel="noopener">arXiv</a>]
-            [<a href="https://doi.org/10.1007/s11856-020-2085-x" target="_blank" rel="noopener">published</a>]
+            [<a href="https://doi.org/10.1007/s11856-020-2085-x" target="_blank" rel="noopener">journal</a>]
           </span>
         </div>
         <div class="details">
@@ -360,7 +419,7 @@
           <strong>Global geometry on moduli of local systems for surfaces with boundary.</strong>
           <span class="paper-links">
             [<a href="https://arxiv.org/abs/1612.02518" target="_blank" rel="noopener">arXiv</a>]
-            [<a href="https://doi.org/10.1112/S0010437X20007241" target="_blank" rel="noopener">published</a>]
+            [<a href="https://doi.org/10.1112/S0010437X20007241" target="_blank" rel="noopener">journal</a>]
           </span>
         </div>
         <div class="details">
@@ -373,89 +432,26 @@
 
   <hr>
 
-  <section>
-    <h2>Funding</h2>
-
-    <div class="grant">
-      <div class="grant-title">
-        Samsung Science and Technology Foundation, 2022–2027
-      </div>
-      <div>
-        Analysis of Diophantine Problems with Nonlinear Symmetry
-        (SSTF-BA2201-03)
-      </div>
-      <div class="details">Principal Investigator</div>
-    </div>
-
-    <div class="grant">
-      <div class="grant-title">
-        National Research Foundation of Korea, 2025–2028
-      </div>
-      <div>
-        Dynamics and Arithmetic Structures on Manifolds (DASOM)
-        (RS-2025-02293115)
-      </div>
-      <div class="details">Co-investigator</div>
-    </div>
-  </section>
-
-  <hr>
-
-  <section>
-    <h2>Students</h2>
-
-    <p><strong>Ph.D. students</strong></p>
-    <ul class="student-list">
-      <li>
-        Seong Youn Kim, 2022–present
-        <span class="details">(co-advised with Gye-Seon Lee)</span>
-      </li>
-      <li>Young Joon Ley, 2022–present</li>
-      <li>Eungchan Kim, 2025–present</li>
-      <li>Jihye Oh, 2025–present</li>
-    </ul>
-
-    <p><strong>Master's students</strong></p>
-    <ul class="student-list">
-      <li>
-        Juhan Kim, M.S. 2023
-        <div class="details">
-          Thesis: Compactification of Character Varieties via Triangulation on Surfaces.
-        </div>
-      </li>
-      <li>
-        Eunju Shin, M.S. 2024
-        <div class="details">
-          Thesis: Nonlinear Reduction for Two Types of Generalized Markoff Equations.
-        </div>
-      </li>
-      <li>
-        Jihye Oh, M.S. 2025
-        <div class="details">
-          Thesis: Decidability of Mutation Equivalence for Three-Vertex Quivers.
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <hr>
-
-  <section>
+  <section id="teaching">
     <h2>Teaching</h2>
 
+    <h3 class="current-courses">Current courses — Fall 2026</h3>
     <ul class="teaching-list">
       <li>
         <div class="course-header">
           <span><strong>Analytic Number Theory.</strong> Undergraduate topics course.</span>
-          <span class="term">Fall 2026</span>
         </div>
       </li>
       <li>
         <div class="course-header">
           <span><strong>Diophantine Analysis.</strong> Graduate topics course.</span>
-          <span class="term">Fall 2026</span>
         </div>
       </li>
+    </ul>
+
+    <details class="past-courses">
+      <summary>Past courses</summary>
+      <ul class="teaching-list">
       <li>
         <div class="course-header">
           <span><strong>Algebra III.</strong> Graduate course.</span>
@@ -522,15 +518,90 @@
           <span class="term">Fall 2021</span>
         </div>
       </li>
+      </ul>
+    </details>
+  </section>
+
+  <hr>
+
+  <section id="students">
+    <h2>Students</h2>
+
+    <h3 class="subsection-heading">Ph.D. students</h3>
+    <ul class="student-list">
+      <li>
+        Seong Youn Kim, 2022–present
+        <span class="details">(co-advised with Gye-Seon Lee)</span>
+      </li>
+      <li>Young Joon Ley, 2022–present</li>
+      <li>Eungchan Kim, 2025–present</li>
+      <li>Jihye Oh, 2025–present</li>
+    </ul>
+
+    <h3 class="subsection-heading">Master's students</h3>
+    <ul class="student-list">
+      <li>
+        Juhan Kim, M.S. 2023
+        <div class="details">
+          Thesis: Compactification of Character Varieties via Triangulation on Surfaces.
+        </div>
+      </li>
+      <li>
+        Eunju Shin, M.S. 2024
+        <div class="details">
+          Thesis: Nonlinear Reduction for Two Types of Generalized Markoff Equations.
+        </div>
+      </li>
+      <li>
+        Jihye Oh, M.S. 2025
+        <div class="details">
+          Thesis: Decidability of Mutation Equivalence for Three-Vertex Quivers.
+        </div>
+      </li>
     </ul>
   </section>
 
   <hr>
 
+  <section>
+    <h2>Funding</h2>
+
+    <div class="grant">
+      <div class="grant-title">
+        Samsung Science and Technology Foundation, 2022–2027
+      </div>
+      <div>
+        Analysis of Diophantine Problems with Nonlinear Symmetry
+        (SSTF-BA2201-03)
+      </div>
+      <div class="details">Principal Investigator</div>
+    </div>
+
+    <div class="grant">
+      <div class="grant-title">
+        National Research Foundation of Korea, 2025–2028
+      </div>
+      <div>
+        Dynamics and Arithmetic Structures on Manifolds (DASOM)
+        (RS-2025-02293115)
+      </div>
+      <div class="details">Co-investigator</div>
+    </div>
+  </section>
+
+  <hr>
+
   <footer>
-    Last updated: August 2026.
+    Last updated: <span id="last-updated">September 2026</span>.
   </footer>
 
 </main>
+<script>
+  const lastModified = new Date(document.lastModified);
+  if (!Number.isNaN(lastModified.getTime())) {
+    document.getElementById('last-updated').textContent =
+      lastModified.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  }
+</script>
 </body>
 </html>
