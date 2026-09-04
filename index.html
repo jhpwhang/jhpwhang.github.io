@@ -172,7 +172,7 @@
 
     .current-courses,
     .subsection-heading,
-    .past-courses summary {
+    .expandable-list summary {
       margin: 0;
       font-size: 1rem;
       font-weight: 600;
@@ -185,17 +185,17 @@
       margin-bottom: 16px;
     }
 
-    .past-courses summary {
+    .expandable-list summary {
       cursor: pointer;
       width: fit-content;
       list-style: none;
     }
 
-    .past-courses summary::-webkit-details-marker {
+    .expandable-list summary::-webkit-details-marker {
       display: none;
     }
 
-    .past-courses summary::after {
+    .expandable-list summary::after {
       content: "";
       display: inline-block;
       width: 6px;
@@ -206,19 +206,24 @@
       transform: translateY(-2px) rotate(45deg);
     }
 
-    .past-courses[open] summary::after {
+    .expandable-list[open] summary::after {
       transform: translateY(1px) rotate(225deg);
     }
 
-    .past-courses summary:hover {
+    .expandable-list summary:hover {
       text-decoration: underline;
       text-underline-offset: 3px;
     }
 
-    .past-courses[open] summary {
+    .expandable-list[open] summary {
       margin-bottom: 16px;
     }
     footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px 24px;
       color: var(--muted);
       font-size: 0.85rem;
     }
@@ -260,7 +265,7 @@
         white-space: normal;
       }
 
-      .past-courses summary {
+      .expandable-list summary {
         min-height: 44px;
         padding: 10px 12px 10px 0;
       }
@@ -269,7 +274,7 @@
   </style>
 </head>
 
-<body>
+<body id="top">
 <main>
 
   <header>
@@ -312,6 +317,11 @@
       <span>Ph.D., Princeton University (advisor: Peter Sarnak)</span>
     </div>
 
+    <div class="position">
+      <span>2013</span>
+      <span>B.Sc.H., Queen's University</span>
+    </div>
+
     <p class="research-interests">
       <strong>Research interests:</strong>
       Number theory (Diophantine analysis), arithmetic geometry, topology, and dynamics.
@@ -322,7 +332,9 @@
   <hr>
 
   <section id="publications">
-    <h2>Selected Publications and Preprints</h2>
+    <h2>Publications and Preprints</h2>
+
+    <h3 class="subsection-heading">Selected papers</h3>
 
     <ul class="publication-list">
 
@@ -334,7 +346,7 @@
           </span>
         </div>
         <div class="details">
-          With Alexander Gamburd, Amit Ghosh, and Peter Sarnak. Preprint.
+          With A. Gamburd, A. Ghosh, and P. Sarnak. Preprint (2026).
         </div>
       </li>
 
@@ -345,19 +357,19 @@
             [<a href="https://arxiv.org/abs/2305.13529" target="_blank" rel="noopener">arXiv</a>]
           </span>
         </div>
-        <div class="details">Preprint.</div>
+        <div class="details">Preprint (2023).</div>
       </li>
 
       <li>
         <div class="publication-header">
           <strong>Stokes matrices and exceptional isomorphisms.</strong>
           <span class="paper-links">
-            [<a href="https://arxiv.org/abs/2009.07104" target="_blank" rel="noopener">earlier version</a>]
+            [<a href="https://arxiv.org/abs/2009.07104" target="_blank" rel="noopener">(old) arXiv</a>]
             [<a href="https://doi.org/10.1007/s00208-024-02850-8" target="_blank" rel="noopener">journal</a>]
           </span>
         </div>
         <div class="details">
-          With Yu-Wei Fan. <em>Math. Ann.</em> 390 (2024), 4041–4086.
+          With Y.-W. Fan. <em>Math. Ann.</em> 390 (2024), no. 3, 4041–4086.
         </div>
       </li>
 
@@ -370,7 +382,7 @@
           </span>
         </div>
         <div class="details">
-          With Indranil Biswas, Subhojoy Gupta, and Mahan Mj.
+          With I. Biswas, S. Gupta, and M. Mj.
           <em>Geom. Topol.</em> 26 (2022), no. 2, 679–719.
         </div>
       </li>
@@ -384,7 +396,7 @@
           </span>
         </div>
         <div class="details">
-          With Anand Patel and Ananth Shankar. <em>Adv. Math.</em> 386 (2021).
+          With A. Patel and A. N. Shankar. <em>Adv. Math.</em> 386 (2021), Article 107800.
         </div>
       </li>
 
@@ -410,7 +422,7 @@
           </span>
         </div>
         <div class="details">
-          <em>Israel J. Math.</em> 240 (2020), 935–1004.
+          <em>Israel J. Math.</em> 240 (2020), no. 2, 935–1004.
         </div>
       </li>
 
@@ -428,6 +440,89 @@
       </li>
 
     </ul>
+
+    <details class="expandable-list" id="other-publications">
+      <summary>Other publications</summary>
+      <ul class="publication-list">
+        <li>
+          <div class="publication-header">
+            <strong>Degree gaps in algebraic interpolations.</strong>
+            <span class="paper-links">[<a href="https://doi.org/10.4134/BKMS.b240687" target="_blank" rel="noopener">journal</a>]</span>
+          </div>
+          <div class="details"><em>Bull. Korean Math. Soc.</em> 63 (2026), no. 1, 227–234.</div>
+        </li>
+        <li>
+          <div class="publication-header">
+            <strong>A reciprocity law on the one-holed torus.</strong>
+            <span class="paper-links">[<a href="https://doi.org/10.4134/JKMS.j250009" target="_blank" rel="noopener">journal</a>]</span>
+          </div>
+          <div class="details"><em>J. Korean Math. Soc.</em> 62 (2025), no. 6, 1525–1538.</div>
+        </li>
+        <li>
+          <div class="publication-header">
+            <strong>On finite categories of algebraic varieties.</strong>
+            <span class="paper-links">
+              [<a href="https://arxiv.org/abs/2309.04080" target="_blank" rel="noopener">arXiv</a>]
+              [<a href="https://doi.org/10.1016/j.jalgebra.2025.04.039" target="_blank" rel="noopener">journal</a>]
+            </span>
+          </div>
+          <div class="details"><em>J. Algebra</em> 681 (2025), 206–217.</div>
+        </li>
+        <li>
+          <div class="publication-header">
+            <strong>The uncertainty principle and a generalization of a theorem of Tao.</strong>
+            <span class="paper-links">[<a href="https://doi.org/10.1016/j.laa.2012.02.009" target="_blank" rel="noopener">journal</a>]</span>
+          </div>
+          <div class="details">With M. R. Murty. <em>Linear Algebra Appl.</em> 437 (2012), no. 1, 214–220.</div>
+        </li>
+        <li>
+          <div class="publication-header">
+            <strong>Another proof of the infinitude of the prime numbers.</strong>
+          </div>
+          <div class="details"><em>Amer. Math. Monthly</em> 117 (2010), no. 2, 181.</div>
+        </li>
+      </ul>
+    </details>
+  </section>
+
+  <hr>
+
+  <section id="students">
+    <h2>Students</h2>
+
+    <h3 class="subsection-heading">Current students</h3>
+    <ul class="student-list">
+      <li>
+        Seong Youn Kim, Ph.D. student, 2022–present
+        <span class="details">(co-advised with Gye-Seon Lee)</span>
+      </li>
+      <li>Young Joon Ley, Ph.D. student, 2022–present</li>
+      <li>Eungchan Kim, Ph.D. student, 2025–present</li>
+      <li>
+        Jihye Oh, Ph.D. student, 2025–present; M.S. 2025
+        <div class="details">
+          Master's thesis: Decidability of Mutation Equivalence for Three-Vertex Quivers.
+        </div>
+      </li>
+    </ul>
+
+    <details class="expandable-list">
+      <summary>Past students</summary>
+    <ul class="student-list">
+      <li>
+        Juhan Kim, M.S. 2023
+        <div class="details">
+          Thesis: Compactification of Character Varieties via Triangulation on Surfaces.
+        </div>
+      </li>
+      <li>
+        Eunju Shin, M.S. 2024
+        <div class="details">
+          Thesis: Nonlinear Reduction for Two Types of Generalized Markoff Equations.
+        </div>
+      </li>
+    </ul>
+    </details>
   </section>
 
   <hr>
@@ -449,7 +544,7 @@
       </li>
     </ul>
 
-    <details class="past-courses">
+    <details class="expandable-list">
       <summary>Past courses</summary>
       <ul class="teaching-list">
       <li>
@@ -524,45 +619,6 @@
 
   <hr>
 
-  <section id="students">
-    <h2>Students</h2>
-
-    <h3 class="subsection-heading">Ph.D. students</h3>
-    <ul class="student-list">
-      <li>
-        Seong Youn Kim, 2022–present
-        <span class="details">(co-advised with Gye-Seon Lee)</span>
-      </li>
-      <li>Young Joon Ley, 2022–present</li>
-      <li>Eungchan Kim, 2025–present</li>
-      <li>Jihye Oh, 2025–present</li>
-    </ul>
-
-    <h3 class="subsection-heading">Master's students</h3>
-    <ul class="student-list">
-      <li>
-        Juhan Kim, M.S. 2023
-        <div class="details">
-          Thesis: Compactification of Character Varieties via Triangulation on Surfaces.
-        </div>
-      </li>
-      <li>
-        Eunju Shin, M.S. 2024
-        <div class="details">
-          Thesis: Nonlinear Reduction for Two Types of Generalized Markoff Equations.
-        </div>
-      </li>
-      <li>
-        Jihye Oh, M.S. 2025
-        <div class="details">
-          Thesis: Decidability of Mutation Equivalence for Three-Vertex Quivers.
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <hr>
-
   <section>
     <h2>Funding</h2>
 
@@ -592,7 +648,8 @@
   <hr>
 
   <footer>
-    Last updated: <span id="last-updated">September 2026</span>.
+    <span>Last updated: <span id="last-updated">September 2026</span>.</span>
+    <a href="#top">Back to top ↑</a>
   </footer>
 
 </main>
