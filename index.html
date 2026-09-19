@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Junho Peter Whang</title>
+
+  <style>
+    :root {
+      --text: #222;
+      --muted: #666;
+      --link: #315c35;
+      --link-visited: #556b2f;
+      --rule: #ddd;
+      --background: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .korean-name {
+      display: inline-block;
+      font-size: 0.65em;
+      font-weight: 400;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    a {
+      color: var(--link);
+    }
+
+    a:visited {
+      color: var(--link-visited);
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 36px 0;
+    }
+
+    .subtitle {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+
+
+    .intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .intro-text {
+      min-width: 0;
+    }
+
+    .portrait {
+      width: 185px;
+      height: 231px;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .position {
+      display: grid;
+      grid-template-columns: 115px 1fr;
+      gap: 12px;
+      margin-bottom: 5px;
+    }
+
+    .research-interests {
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+
+    .cv-link {
+      font-size: 0.9rem;
+    }
+
+    .publication-list,
+    .student-list,
+    .teaching-list {
+      padding-left: 24px;
+      margin: 0 0 22px;
+    }
+
+    .publication-list li,
+    .student-list li,
+    .teaching-list li {
+      margin-bottom: 14px;
+    }
+
+    .publication-header,
+    .course-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: baseline;
+    }
+
+    .paper-links,
+    .course-links {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .past-course-list .course-main {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      column-gap: 16px;
+      align-items: start;
+    }
+
+    .term {
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .course-level {
+      display: inline;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-left: 0.35em;
+    }
+
+    .details {
+      color: var(--muted);
+    }
+
+    .publication-header > strong {
+      font-weight: 600;
+    }
+
+    .student-list div.details {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-top: 2px;
+    }
+
+    .grant {
+      margin-bottom: 18px;
+    }
+
+    .grant-title {
+      font-weight: 600;
+    }
+
+    section[id] {
+      scroll-margin-top: 24px;
+    }
+
+    .current-courses,
+    .subsection-heading,
+    .expandable-list summary {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .current-courses,
+    .subsection-heading {
+      margin-bottom: 16px;
+    }
+
+    .expandable-list summary {
+      cursor: pointer;
+      width: fit-content;
+      list-style: none;
+    }
+
+    .expandable-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .expandable-list summary::after {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-left: 10px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: translateY(-2px) rotate(45deg);
+    }
+
+    .expandable-list[open] summary::after {
+      transform: translateY(1px) rotate(225deg);
+    }
+
+    .expandable-list summary:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .expandable-list[open] summary {
+      margin-bottom: 16px;
+    }
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px 24px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 28px 18px 40px;
+      }
+
+
+      .intro {
+        display: block;
+      }
+
+      .portrait {
+        width: 110px;
+        height: auto;
+        margin: 4px auto 24px;
+      }
+
+      .position {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 14px;
+      }
+
+      .publication-header,
+      .course-header {
+        display: block;
+      }
+
+      .paper-links,
+      .course-links {
+        display: block;
+        margin-top: 3px;
+      }
+
+      .past-course-list .course-main {
+        grid-template-columns: 1fr;
+        row-gap: 2px;
+      }
+
+      .paper-links,
+      .course-links {
+        white-space: normal;
+      }
+
+      .expandable-list summary {
+        min-height: 44px;
+        padding: 10px 12px 10px 0;
+      }
+    }
+
+  </style>
+</head>
+
+<body id="top">
+<main>
+
+  <header>
+    <div class="intro">
+      <div class="intro-text">
+        <h1>Junho Peter Whang <span class="korean-name" lang="ko">황준호</span></h1>
+
+        <div class="subtitle">
+          Department of Mathematical Sciences<br>
+          Seoul National University
+        </div>
+
+        <p>
+          <strong>Office:</strong> Building 27 Room 302<br>
+          <strong>Email:</strong> jwhang [at] snu [dot] ac [dot] kr<br>
+          <span class="cv-link"><a href="cv.pdf">Curriculum vitae (PDF)</a></span>
+        </p>
+      </div>
+
+      <img class="portrait" src="junho.jpg" alt="Junho Peter Whang">
+    </div>
+
+    <div class="position">
+      <span>2021–present</span>
+      <span>Assistant Professor, Seoul National University</span>
+    </div>
+
+    <div class="position">
+      <span>2025–2026</span>
+      <span>Visiting Fellow, Princeton University (sabbatical)</span>
+    </div>
+
+    <div class="position">
+      <span>2018–2021</span>
+      <span>C.L.E. Moore Instructor, MIT</span>
+    </div>
+
+    <div class="position">
+      <span>2018</span>
+      <span>Ph.D., Princeton University (advisor: Peter Sarnak)</span>
+    </div>
+
+    <div class="position">
+      <span>2013</span>
+      <span>B.Sc.H., Queen's University</span>
+    </div>
+
+    <p class="research-interests">
+      <strong>Research interests:</strong>
+      Number theory (Diophantine analysis), arithmetic geometry, topology, and dynamics.
+    </p>
+
+  </header>
+
+  <hr>
+
+  <section id="publications">
+    <h2>Publications and Preprints</h2>
+
+    <h3 class="subsection-heading">Selected papers</h3>
+
+    <ul class="publication-list">
+
+      <li>
+        <div class="publication-header">
+          <strong>On indefinite integral ternary quadratic forms.</strong>
+          <span class="paper-links">
+            [<a href="https://arxiv.org/abs/2603.05849" target="_blank" rel="noopener">arXiv</a>]
+            [<a href="https://www.youtube.com/watch?v=t8td7eSG7eo" target="_blank" rel="noopener">talk</a>]
+          </span>
+        </div>
+        <div class="details">
+          With A. Gamburd, A. Ghosh, and P. Sarnak. Preprint (2026).
+        </div>
+      </li>
+
+      <li>
+        <div class="publication-header">
+          <strong>On periodic orbits of polynomial maps.</strong>
+          <span class="paper-links">
+            [<a href="https://arxiv.org/abs/2305.13529" target="_blank" rel="noopener">arXiv</a>]
+          </span>
+        </div>
+        <div class="details">Preprint (2023).</div>
+      </li>
+
+      <li>
+        <div class="publication-header">
+          <strong>Stokes matrices and exceptional isomorphisms.</strong>
+          <span class="paper-links">
+            [<a href="https://arxiv.org/abs/2009.07104" target="_blank" rel="noopener">(old) arXiv</a>]
+            [<a href="https://doi.org/10.1007/s00208-024-02850-8" target="_blank" rel="noopener">journal</a>]
+          </span>
+        </div>
+        <div class="details">
+          With Y.-W. Fan. <em>Math. Ann.</em> 390 (2024), no. 3, 4041–4086.
+        </div>
+      </li>
+
+      <li>
+        <div class="publication-header">
+          <strong>Surface group representations in SL<sub>2</sub>(C) with finite mapping class orbits.</strong>
+          <span class="paper-links">
+            [<a href="https://arxiv.org/abs/1707.00071" target="_blank" rel="noopener">arXiv</a>]
+            [<a href="https://doi.org/10.2140/gt.2022.26.679" target="_blank" rel="noopener">journal</a>]
+          </span>
+        </div>
+        <div class="details">
+          With I. Biswas, S. Gupta, and M. Mj.
+          <em>Geom. Topol.</em> 26 (2022), no. 2, 679–719.
+        </div>
+      </li>
+
+      <li>
+        <div class="publication-header">
+          <strong>The rank two <em>p</em>-curvature conjecture on generic curves.</strong>
+          <span class="paper-links">
+            [<a href="https://arxiv.org/abs/1811.04538" target="_blank" rel="noopener">arXiv</a>]
+            [<a href="https://doi.org/10.1016/j.aim.2021.107800" target="_blank" rel="noopener">journal</a>]
+          </span>
+        </div>
+        <div class="details">
+          With A. Patel and A. N. Shankar. <em>Adv. Math.</em> 386 (2021), Article 107800.
+        </div>
+      </li>
+
+      <li>
+        <div class="publication-header">
+          <strong>Arithmetic of curves on moduli of local systems.</strong>
+          <span class="paper-links">
+            [<a href="https://arxiv.org/abs/1803.04583" target="_blank" rel="noopener">arXiv</a>]
+            [<a href="https://doi.org/10.2140/ant.2020.14.2575" target="_blank" rel="noopener">journal</a>]
+          </span>
+        </div>
+        <div class="details">
+          <em>Algebra Number Theory</em> 14 (2020), no. 10, 2575–2605.
+        </div>
+      </li>
+
+      <li>
+        <div class="publication-header">
+          <strong>Nonlinear descent on moduli of local systems.</strong>
+          <span class="paper-links">
+            [<a href="https://arxiv.org/abs/1710.01848" target="_blank" rel="noopener">arXiv</a>]
+            [<a href="https://doi.org/10.1007/s11856-020-2085-x" target="_blank" rel="noopener">journal</a>]
+          </span>
+        </div>
+        <div class="details">
+          <em>Israel J. Math.</em> 240 (2020), no. 2, 935–1004.
+        </div>
+      </li>
+
+      <li>
+        <div class="publication-header">
+          <strong>Global geometry on moduli of local systems for surfaces with boundary.</strong>
+          <span class="paper-links">
+            [<a href="https://arxiv.org/abs/1612.02518" target="_blank" rel="noopener">arXiv</a>]
+            [<a href="https://doi.org/10.1112/S0010437X20007241" target="_blank" rel="noopener">journal</a>]
+          </span>
+        </div>
+        <div class="details">
+          <em>Compos. Math.</em> 156 (2020), no. 8, 1517–1559.
+        </div>
+      </li>
+
+    </ul>
+
+    <details class="expandable-list" id="other-publications">
+      <summary>Other publications</summary>
+      <ul class="publication-list">
+        <li>
+          <div class="publication-header">
+            <strong>Degree gaps in algebraic interpolations.</strong>
+            <span class="paper-links">[<a href="https://doi.org/10.4134/BKMS.b240687" target="_blank" rel="noopener">journal</a>]</span>
+          </div>
+          <div class="details"><em>Bull. Korean Math. Soc.</em> 63 (2026), no. 1, 227–234.</div>
+        </li>
+        <li>
+          <div class="publication-header">
+            <strong>A reciprocity law on the one-holed torus.</strong>
+            <span class="paper-links">[<a href="https://doi.org/10.4134/JKMS.j250009" target="_blank" rel="noopener">journal</a>]</span>
+          </div>
+          <div class="details"><em>J. Korean Math. Soc.</em> 62 (2025), no. 6, 1525–1538.</div>
+        </li>
+        <li>
+          <div class="publication-header">
+            <strong>On finite categories of algebraic varieties.</strong>
+            <span class="paper-links">
+              [<a href="https://arxiv.org/abs/2309.04080" target="_blank" rel="noopener">arXiv</a>]
+              [<a href="https://doi.org/10.1016/j.jalgebra.2025.04.039" target="_blank" rel="noopener">journal</a>]
+            </span>
+          </div>
+          <div class="details"><em>J. Algebra</em> 681 (2025), 206–217.</div>
+        </li>
+        <li>
+          <div class="publication-header">
+            <strong>The uncertainty principle and a generalization of a theorem of Tao.</strong>
+            <span class="paper-links">[<a href="https://doi.org/10.1016/j.laa.2012.02.009" target="_blank" rel="noopener">journal</a>]</span>
+          </div>
+          <div class="details">With M. R. Murty. <em>Linear Algebra Appl.</em> 437 (2012), no. 1, 214–220.</div>
+        </li>
+        <li>
+          <div class="publication-header">
+            <strong>Another proof of the infinitude of the prime numbers.</strong>
+          </div>
+          <div class="details"><em>Amer. Math. Monthly</em> 117 (2010), no. 2, 181.</div>
+        </li>
+      </ul>
+    </details>
+  </section>
+
+  <hr>
+
+  <section id="students">
+    <h2>Students</h2>
+
+    <h3 class="subsection-heading">Current students</h3>
+    <ul class="student-list">
+      <li>
+        Seong Youn Kim, Ph.D. student, 2022–present
+        <span class="details">(co-advised with Gye-Seon Lee)</span>
+      </li>
+      <li>Young Joon Ley, Ph.D. student, 2022–present</li>
+      <li>Eungchan Kim, Ph.D. student, 2025–present</li>
+      <li>
+        Jihye Oh, Ph.D. student, 2025–present; M.S. 2025
+        <div class="details">
+          Master's thesis: Decidability of Mutation Equivalence for Three-Vertex Quivers.
+        </div>
+      </li>
+    </ul>
+
+    <details class="expandable-list">
+      <summary>Past students</summary>
+    <ul class="student-list">
+      <li>
+        Juhan Kim, M.S. 2023
+        <div class="details">
+          Thesis: Compactification of Character Varieties via Triangulation on Surfaces.
+        </div>
+      </li>
+      <li>
+        Eunju Shin, M.S. 2024
+        <div class="details">
+          Thesis: Nonlinear Reduction for Two Types of Generalized Markoff Equations.
+        </div>
+      </li>
+    </ul>
+    </details>
+  </section>
+
+  <hr>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+
+    <h3 class="current-courses">Current courses — Fall 2026</h3>
+    <ul class="teaching-list">
+      <li>
+        <div class="course-header">
+          <span><strong>Analytic Number Theory.</strong> Undergraduate topics course.</span>
+          <span class="course-links">[<a href="Analytic_Number_Theory.pdf">lecture notes</a>]</span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span><strong>Diophantine Analysis.</strong> Graduate topics course.</span>
+        </div>
+      </li>
+    </ul>
+
+    <details class="expandable-list">
+      <summary>Past courses</summary>
+      <ul class="teaching-list past-course-list">
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Spring 2025</span><span><strong>Algebra III.</strong><span class="course-level">Graduate course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Spring 2025</span><span><strong>Discrete Groups and Diophantine Problems.</strong><span class="course-level">Graduate topics course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Fall 2024</span><span><strong>Algebra II.</strong><span class="course-level">Graduate course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Spring 2024</span><span><strong>Algebra I.</strong><span class="course-level">Graduate course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Spring 2024</span><span><strong>Commutative Algebra.</strong><span class="course-level">Graduate course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Fall 2023</span><span><strong>Schemes: Cohomology and Applications.</strong><span class="course-level">Graduate topics course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Spring 2023</span><span><strong>Algebraic Geometry.</strong><span class="course-level">Graduate course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Spring 2023</span><span><strong>Diophantine Geometry.</strong><span class="course-level">Graduate topics course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Fall 2022</span><span><strong>Linear Algebra.</strong><span class="course-level">Undergraduate course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Spring 2022</span><span><strong>Commutative Algebra.</strong><span class="course-level">Graduate course.</span></span></span>
+        </div>
+      </li>
+      <li>
+        <div class="course-header">
+          <span class="course-main"><span class="term">Fall 2021</span><span><strong>Introduction to Diophantine Analysis.</strong><span class="course-level">Undergraduate topics course.</span></span></span>
+        </div>
+      </li>
+      </ul>
+    </details>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Funding</h2>
+
+    <div class="grant">
+      <div class="grant-title">
+        Samsung Science and Technology Foundation, 2022–2027
+      </div>
+      <div>
+        Analysis of Diophantine Problems with Nonlinear Symmetry
+        (SSTF-BA2201-03)
+      </div>
+      <div class="details">Principal Investigator</div>
+    </div>
+
+    <div class="grant">
+      <div class="grant-title">
+        National Research Foundation of Korea, 2025–2028
+      </div>
+      <div>
+        Dynamics and Arithmetic Structures on Manifolds (DASOM)
+        (RS-2025-02293115)
+      </div>
+      <div class="details">Co-investigator</div>
+    </div>
+  </section>
+
+  <hr>
+
+  <footer>
+    <span>Last updated: <span id="last-updated">September 2026</span>.</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+</main>
+<script>
+  const lastModified = new Date(document.lastModified);
+  if (!Number.isNaN(lastModified.getTime())) {
+    document.getElementById('last-updated').textContent =
+      lastModified.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  }
+</script>
+</body>
+</html>
