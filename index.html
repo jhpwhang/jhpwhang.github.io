@@ -139,14 +139,40 @@
     }
 
     .paper-links,
-    .course-links,
-    .term {
+    .course-links {
       flex-shrink: 0;
       white-space: nowrap;
     }
 
+    .past-course-list .course-main {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      column-gap: 16px;
+      align-items: start;
+    }
+
+    .term {
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .course-level {
+      display: inline;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-left: 0.35em;
+    }
+
     .details {
       color: var(--muted);
+    }
+
+    .teaching-note {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: -6px 0 20px;
     }
 
     .publication-header > strong {
@@ -257,10 +283,14 @@
       }
 
       .paper-links,
-      .course-links,
-      .term {
+      .course-links {
         display: block;
         margin-top: 3px;
+      }
+
+      .past-course-list .course-main {
+        grid-template-columns: 1fr;
+        row-gap: 2px;
       }
 
       .paper-links,
@@ -551,74 +581,70 @@
 
     <details class="expandable-list">
       <summary>Past courses</summary>
-      <ul class="teaching-list">
+      <ul class="teaching-list past-course-list">
       <li>
         <div class="course-header">
-          <span><strong>Algebra III.</strong> Graduate course.</span>
-          <span class="course-links">Spring 2025</span>
+          <span class="course-main"><span class="term">Spring 2025</span><span><strong>Algebra III.</strong><span class="course-level">Graduate course.</span></span></span>
+          <span class="course-links">[<a href="Algebra_III_Lecture_Notes.pdf">lecture notes</a>]</span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Discrete Groups and Diophantine Problems.</strong> Graduate topics course.</span>
-          <span class="term">Spring 2025</span>
+          <span class="course-main"><span class="term">Spring 2025</span><span><strong>Discrete Groups and Diophantine Problems.</strong><span class="course-level">Graduate topics course.</span></span></span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Algebra II.</strong> Graduate course.</span>
-          <span class="course-links">Fall 2024</span>
+          <span class="course-main"><span class="term">Fall 2024</span><span><strong>Algebra II.</strong><span class="course-level">Graduate course.</span></span></span>
+          <span class="course-links">[<a href="Algebra_II_Lecture_Notes.pdf">lecture notes</a>]</span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Algebra I.</strong> Graduate course.</span>
-          <span class="course-links">Spring 2024</span>
+          <span class="course-main"><span class="term">Spring 2024</span><span><strong>Algebra I.</strong><span class="course-level">Graduate course.</span></span></span>
+          <span class="course-links">[<a href="Algebra_I_Lecture_Notes.pdf">lecture notes</a>]</span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Commutative Algebra.</strong> Graduate course.</span>
-          <span class="term">Spring 2024</span>
+          <span class="course-main"><span class="term">Spring 2024</span><span><strong>Commutative Algebra.</strong><span class="course-level">Graduate course.</span></span></span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Schemes: Cohomology and Applications.</strong> Graduate topics course.</span>
-          <span class="term">Fall 2023</span>
+          <span class="course-main"><span class="term">Fall 2023</span><span><strong>Schemes: Cohomology and Applications.</strong><span class="course-level">Graduate topics course.</span></span></span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Algebraic Geometry.</strong> Graduate course.</span>
-          <span class="term">Spring 2023</span>
+          <span class="course-main"><span class="term">Spring 2023</span><span><strong>Algebraic Geometry.</strong><span class="course-level">Graduate course.</span></span></span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Diophantine Geometry.</strong> Graduate topics course.</span>
-          <span class="term">Spring 2023</span>
+          <span class="course-main"><span class="term">Spring 2023</span><span><strong>Diophantine Geometry.</strong><span class="course-level">Graduate topics course.</span></span></span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Linear Algebra.</strong> Undergraduate course.</span>
-          <span class="term">Fall 2022</span>
+          <span class="course-main"><span class="term">Fall 2022</span><span><strong>Linear Algebra.</strong><span class="course-level">Undergraduate course.</span></span></span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Commutative Algebra.</strong> Graduate course.</span>
-          <span class="term">Spring 2022</span>
+          <span class="course-main"><span class="term">Spring 2022</span><span><strong>Commutative Algebra.</strong><span class="course-level">Graduate course.</span></span></span>
         </div>
       </li>
       <li>
         <div class="course-header">
-          <span><strong>Introduction to Diophantine Analysis.</strong> Undergraduate topics course.</span>
-          <span class="term">Fall 2021</span>
+          <span class="course-main"><span class="term">Fall 2021</span><span><strong>Introduction to Diophantine Analysis.</strong><span class="course-level">Undergraduate topics course.</span></span></span>
         </div>
       </li>
       </ul>
+      <p class="teaching-note">
+  The linked lecture notes are revised from handwritten lectures delivered at Seoul National University.
+  Sources and acknowledgments are listed in each volume.
+      </p>
     </details>
   </section>
 
